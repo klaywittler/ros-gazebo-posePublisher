@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="args" default="unit_box_0"/> 
+  <node pkg="model_pose" type="model_pose" name="pose" args="$(arg args)"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find model_pose)/model_pose/worlds/box.world"/>
+  </include>
+</launch>
